@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:f12e1c42ac503d43c1a2ab360cc4c8b7:1/1$ -->
+<Imageset Name="launchTheBomb" Imagefile="launchTheBomb.png" NativeHorzRes="123" NativeVertRes="737" AutoScaled="false">
+    <Image Name="block01" XPos="0" YPos="0" Width="120" Height="120"/>
+    <Image Name="block02" XPos="0" YPos="120" Width="120" Height="120"/>
+    <Image Name="bomb01" XPos="0" YPos="240" Width="77" Height="77"/>
+    <Image Name="bomb02" XPos="0" YPos="317" Width="77" Height="77"/>
+    <Image Name="bomb03" XPos="0" YPos="394" Width="77" Height="77"/>
+    <Image Name="bomb04" XPos="0" YPos="471" Width="77" Height="77"/>
+    <Image Name="eye" XPos="77" YPos="471" Width="46" Height="50"/>
+    <Image Name="eyeDied" XPos="0" YPos="548" Width="46" Height="50"/>
+    <Image Name="eyeHappy" XPos="46" YPos="548" Width="46" Height="50"/>
+    <Image Name="mouth01" XPos="0" YPos="598" Width="57" Height="23"/>
+    <Image Name="mouth02" XPos="57" YPos="598" Width="57" Height="23"/>
+    <Image Name="mouth03" XPos="0" YPos="621" Width="57" Height="23"/>
+    <Image Name="point" XPos="57" YPos="621" Width="15" Height="15"/>
+    <Image Name="pupil" XPos="72" YPos="621" Width="10" Height="10"/>
+    <Image Name="shadowBomb" XPos="0" YPos="644" Width="77" Height="10"/>
+    <Image Name="spark01" XPos="77" YPos="644" Width="40" Height="40"/>
+    <Image Name="spark02" XPos="0" YPos="684" Width="40" Height="40"/>
+    <Image Name="spark03" XPos="40" YPos="684" Width="40" Height="40"/>
+    <Image Name="spark04" XPos="80" YPos="684" Width="40" Height="40"/>
+    <Image Name="timerBomb" XPos="0" YPos="724" Width="77" Height="13"/>
+</Imageset>

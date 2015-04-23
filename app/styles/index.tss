@@ -1,0 +1,28 @@
+
+".gameContainer" : {
+	backgroundColor:'white',
+	orientationModes: [Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT],
+	fullscreen:true,
+	navBarHidden : true,
+	keepScreenOn:true
+},
+
+"#title": {
+	bottom:0,
+	color:'#616161',
+	zIndex:"99",
+	
+},
+
+"#title[formFactor=handheld]": {
+
+	font: {fontSize : 15}
+
+	
+},
+
+"#title[formFactor=tablet]": {
+
+	font: {fontSize : 30},
+	
+}

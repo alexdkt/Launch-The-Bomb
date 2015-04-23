@@ -1,0 +1,5 @@
+<Alloy>
+	<Window id="win" class="gameContainer" >
+		<Label id="title">made with platino. created by arayon@arei.es</Label>
+	</Window>
+</Alloy>
