@@ -117,17 +117,17 @@ function MainScene(window, game) {
 		
 		space = World.create({
 			gravity:gravity,
-			borderWall: true,				// Border wall is used for fast testing purposes, creating four physic walls on screen borders. 
-			borderWallWidth:1,				// Width of border wall (Useful if slow devices don't detect collisions correctly)
-			//leftOffset : ,				// Offset for left borderWall
-			//rightOffset : ,				// Offset for right borderWall
-			//floorOffset : ,				// Offset for floor borderWall
-			groundWallOffset : GROUND_LEVEL,// Offset for ground borderWall,
-			//borderWallElasticity:0,		// Width of border wall
-			//borderWallFriction:1,			// Width of border wall
-			//SleepTimeThreshold:0.5,		// Elapsed time before a group of idle bodies is put to sleep (defaults to infinity which disables sleeping).
-			//CollisionSlop: 0.5,			// Amount of encouraged penetration between colliding shapes.
-			//damping: 1,					// Global viscous damping value to use for all rigid bodies in this space (default value is 1.0 which disables damping).
+			borderWall: true,					// Border wall is used for fast testing purposes, creating four physic walls on screen borders. 
+			borderWallWidth:1,					// Width of border wall (Useful if slow devices don't detect collisions correctly)
+			//leftOffset : ,					// Offset for left borderWall
+			//rightOffset : ,					// Offset for right borderWall
+			//floorOffset : ,					// Offset for floor borderWall
+			groundWallOffset : GROUND_LEVEL,	// Offset for ground borderWall,
+			//borderWallElasticity:0,			// Border wall elasticity
+			//borderWallFriction:1,				// Border wall friction
+			//SleepTimeThreshold:0.5,			// Elapsed time before a group of idle bodies is put to sleep (defaults to infinity which disables sleeping).
+			//CollisionSlop: 0.5,				// Amount of encouraged penetration between colliding shapes.
+			//damping: 1,						// Global viscous damping value to use for all rigid bodies in this space (default value is 1.0 which disables damping).
 		});
 		
 
@@ -294,8 +294,8 @@ function MainScene(window, game) {
 		    
 
 			// bomb countdown, when zero is reached, bomb explodes!
-		    
-		    //A) THE BOMB IS READY > (bombExploded === false)
+			
+			//A) THE BOMB IS READY > (bombExploded === false)
 		    
 			if(!bombExploded){  
 			
