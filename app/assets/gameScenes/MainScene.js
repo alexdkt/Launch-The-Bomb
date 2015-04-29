@@ -133,8 +133,8 @@ function MainScene(window, game) {
 
 		space = World.create({
 			gravity : gravity,
-			borderWall : true, 					// Border wall is used for fast testing purposes, creating four physic walls on screen borders.
-			borderWallWidth : 1, 				// Width of border wall (Useful if slow devices don't detect collisions correctly)
+			borderWall : true,					// Border wall is used for fast testing purposes, creating four physic walls on screen borders.
+			borderWallWidth : 1,				// Width of border wall (Useful if slow devices don't detect collisions correctly)
 			//leftOffset : ,					// Offset for left borderWall
 			//rightOffset : ,					// Offset for right borderWall
 			//floorOffset : ,					// Offset for floor borderWall
