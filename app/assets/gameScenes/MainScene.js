@@ -40,46 +40,49 @@ function MainScene(window, game) {
 	var space = null;
 	var _accumulator = 0.0;
 	var gravity = -2000;
-	var constantGravity = 0.005 * gravity;
 	// Constant for missile trajectory prediction (created in lib/bomb.js)
+	var constantGravity = 0.005 * gravity;
+
 
 	// Vars related to sprites and physics, if applicable :
-
-	var bomb_Sprite = null;
+	
 	// Sprite of bomb
-	var bomb_Moment = null;
+	var bomb_Sprite = null;
 	// Moment attached to bomb sprite
-	var bomb_Body = null;
+	var bomb_Moment = null;
 	// Body attached to bomb sprite
-	var bomb_Shape = null;
+	var bomb_Body = null;
 	// Shape attached to bomb sprite
+	var bomb_Shape = null;
 
-	var blocks_Sprite = [];
 	// Array that will contains the block sprites
-	var blocks_Moment = [];
+	var blocks_Sprite = [];
 	// Array that will contains the moments attached to block sprites
-	var blocks_Shape = [];
+	var blocks_Moment = [];
 	// Array that will contains the shapes attached to block sprites
-	var blocks_Body = [];
+	var blocks_Shape = [];
 	// Array that will contains the bodies attached to block sprites
+	var blocks_Body = [];
 
-	var shadow = null;
 	// Bomb shadow
-	var background = null;
+	var shadow = null;
 	// Background
+	var background = null;
+
 
 	/*
 	 * FLAGS
 	 */
-
-	var GROUND_LEVEL = 150;
+	
 	// Floor height (Used in space, shadow and blocks creation)
-	var bombLaunched = false;
+	var GROUND_LEVEL = 150;
 	// Detects if bomb was launched. Changes to true on TouchEnd and activate the enterframe
-	var bombTouched = false;
+	var bombLaunched = false;
 	// Detects if bomb was touched. If false, touchMove will not register the movement.
-	var bombExploded = false;
+	var bombTouched = false;
 	// Detects if bomb has exploded
+	var bombExploded = false;
+
 
 	/*
 	 * SOUNDS
@@ -127,10 +130,11 @@ function MainScene(window, game) {
 
 	function createWorld() {
 
+
 		space = World.create({
 			gravity : gravity,
-			borderWall : true, // Border wall is used for fast testing purposes, creating four physic walls on screen borders.
-			borderWallWidth : 1, // Width of border wall (Useful if slow devices don't detect collisions correctly)
+			borderWall : true, 					// Border wall is used for fast testing purposes, creating four physic walls on screen borders.
+			borderWallWidth : 1, 				// Width of border wall (Useful if slow devices don't detect collisions correctly)
 			//leftOffset : ,					// Offset for left borderWall
 			//rightOffset : ,					// Offset for right borderWall
 			//floorOffset : ,					// Offset for floor borderWall
@@ -140,7 +144,7 @@ function MainScene(window, game) {
 			//SleepTimeThreshold:0.5,			// Elapsed time before a group of idle bodies is put to sleep (defaults to infinity which disables sleeping).
 			//CollisionSlop: 0.5,				// Amount of encouraged penetration between colliding shapes.
 			//damping: 1,						// Global viscous damping value to use for all rigid bodies in this space (default value is 1.0 which disables damping).
-		});
+		}); 
 
 	};
 
