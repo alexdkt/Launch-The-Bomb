@@ -116,11 +116,7 @@ function MainScene(window, game) {
 		createBlocks();
 
 		Sound.loadSounds();
-
-		game.addEventListener('touchstart', onTouchStartBomb);
-		game.addEventListener('touchmove', onTouchMoveBomb);
-		game.addEventListener('touchend', onTouchEndBomb);
-
+		
 		game.startCurrentScene();
 
 		Sound.playMusic();
@@ -202,6 +198,12 @@ function MainScene(window, game) {
 		self.add(bomb_Sprite);
 		bomb_Sprite.startAnimation();
 
+		// Listeners: 
+		
+		bomb_Sprite.addEventListener('touchstart', onTouchStartBomb);  // TouchStart is applied directly to bomb_Sprite (Use Platino ver 2.5)
+		self.addEventListener('touchmove', onTouchMoveBomb);           // Touchmove is applied directly to scene (Use Platino ver 2.5)
+		self.addEventListener('touchend', onTouchEndBomb);             // TouchEnd is applied directly to scene (Use Platino ver 2.5)
+		
 		// Create the shadow:
 
 		shadow = platino.createSpriteSheet({
@@ -451,9 +453,9 @@ function MainScene(window, game) {
 		// Remove listeners while resetting the screen :
 
 		game.removeEventListener('enterframe', gameLoop);
-		game.removeEventListener('touchstart', onTouchStartBomb);
-		game.removeEventListener('touchmove', onTouchMoveBomb);
-		game.removeEventListener('touchend', onTouchEndBomb);
+		bomb_Sprite.removeEventListener('touchstart', onTouchStartBomb);
+		self.removeEventListener('touchmove', onTouchMoveBomb);
+		self.removeEventListener('touchend', onTouchEndBomb);
 
 		setTimeout(function() {
 
@@ -485,9 +487,9 @@ function MainScene(window, game) {
 
 			// Add listeners again:
 
-			game.addEventListener('touchstart', onTouchStartBomb);
-			game.addEventListener('touchmove', onTouchMoveBomb);
-			game.addEventListener('touchend', onTouchEndBomb);
+			bomb_Sprite.addEventListener('touchstart', onTouchStartBomb);
+			self.addEventListener('touchmove', onTouchMoveBomb);
+			self.addEventListener('touchend', onTouchEndBomb);
 
 			// Reset flags:
 
@@ -506,7 +508,7 @@ function MainScene(window, game) {
 
 		// onTouchMoveBomb will work only if this flag (bombTouched) is true
 
-		if (bomb_Sprite.contains(e.x * game.touchScaleX, e.y * game.touchScaleY) && !bombLaunched) {
+		if (!bombLaunched) {
 
 			bombTouched = true;
 
@@ -521,8 +523,8 @@ function MainScene(window, game) {
 			// Trajectory line simulation :
 
 			var touch = {
-				x : bomb_Sprite.center.x - e.x * game.touchScaleX,
-				y : bomb_Sprite.center.y - e.y * game.touchScaleY
+				x : bomb_Sprite.center.x - e.x,
+				y : bomb_Sprite.center.y - e.y
 			};
 
 			bomb_Sprite.moveTrajectory(touch);
@@ -541,8 +543,8 @@ function MainScene(window, game) {
 
 			// Check relative position between touch and bomb to calculate the velocity of the body
 
-			var velX = -(bomb_Sprite.center.x - e.x * game.touchScaleX) * (-constantGravity);
-			var velY = -(bomb_Sprite.center.y - e.y * game.touchScaleY) * (-constantGravity);
+			var velX = -(bomb_Sprite.center.x - e.x) * (-constantGravity);
+			var velY = -(bomb_Sprite.center.y - e.y) * (-constantGravity);
 
 			if (!bombLaunched) {
 
