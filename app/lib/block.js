@@ -16,8 +16,8 @@ module.exports = function(args){
 	
 	// Flags: 
 	
-	var marginEye = 0;					// Movement margin of pupil. Is calculated later. 
-	var bombHasExploded = false;		// Flag to stop moving eyes and scaling mouths. 
+	var marginEye = 0;                  // Movement margin of pupil. Is calculated later. 
+	var bombHasExploded = false;        // Flag to stop moving eyes and scaling mouths. 
 	
 	// Create the block:
 	

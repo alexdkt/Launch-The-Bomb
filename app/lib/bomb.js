@@ -4,10 +4,10 @@ var ALmixer = platino.require('co.lanica.almixer');
 
 module.exports = function(args){
 		
-	var initCenter = {x:0,y:0};								// Save bomb initial position
-	var constant = 0.005*Alloy.Globals.params.gravity;		// Constant for missile trajectory prediction 
+	var initCenter = {x:0,y:0};                             // Save bomb initial position
+	var constant = 0.005*Alloy.Globals.params.gravity;      // Constant for missile trajectory prediction 
 	
-	var bomb = null;										// Bomb sprite
+	var bomb = null;                                        // Bomb sprite
 	
 	// Bomb childs:
 	
